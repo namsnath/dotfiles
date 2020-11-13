@@ -14,8 +14,13 @@ super + space
 super + BackSpace
 	pkill -USR1 -x sxhkd
 
+# Screenshot
 Print
 	flameshot gui
+
+# Lock system
+super + l
+	light-locker-command --lock
 
 #
 # Fn Keys
