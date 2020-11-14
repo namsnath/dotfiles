@@ -98,15 +98,14 @@ monitor_remove() {
     bspc desktop Desktop -r
 }
 
+if [[ $EXT_CONNECTED ]] && [[ $MONITOR_COUNT = 1 ]]; then
+	notify-send 'Monitor Setup', 'Monitor not found in bspc, adding with xrandr.'
+	xrandr --output "$EXTERNAL" --mode 2560x1080 --pos 1366x0
+fi	
+
 if [[ $EXT_CONNECTED ]] && [[ $MONITOR_COUNT = 2 ]]; then
 	monitor_add
 	notify-send 'Monitor Setup' 'Added Monitor'
-fi
-
-if [[ $EXT_CONNECTED ]] && [[ $MONITOR_COUNT = 1 ]]; then
-	echo "Add monitor to bspc? Restart bspc"
-	notify-send 'Monitor Setup' 'Monitor found in xrandr, not in bspc. Adding with xrandr.'
-	xrandr --output "$EXTERNAL" --mode 2560x1080 --pos 1366x0
 fi
 
 if [[ $EXT_DISCONNECTED ]] && [[ $MONITOR_COUNT = 2 ]]; then

@@ -26,6 +26,6 @@ bspc rule -a Screenkey manage=off
 # Script moved to monitor_setup
 # $HOME/.config/polybar/launch.sh
 
-feh --bg-fill /usr/share/backgrounds/archlinux/small.png
-
 $HOME/.config/bspwm/monitor_setup.sh
+
+feh --bg-fill /usr/share/backgrounds/archlinux/small.png
