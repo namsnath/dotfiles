@@ -19,7 +19,7 @@ Print
 	flameshot gui
 
 # Lock system
-super + l
+ctrl + alt + l
 	light-locker-command --lock
 
 #
