@@ -13,12 +13,13 @@ EXTERNAL='HDMI-1' # Name of External screen
 LAPTOP_DESK_COUNT=5 # Number of desktops to keep on laptop
 EXT_REQ_DESK=5 # ???
 
-####### DO NOT CHANGE
-EXT_DISCONNECTED=$(xrandr | grep -o "${EXTERNAL} disconnected")
-EXT_CONNECTED=$(xrandr | grep -o "${EXTERNAL} connected")
-MONITOR_COUNT=$(bspc query -M | wc -l)
-
 LOG=''
+
+get_stuff() {
+	EXT_DISCONNECTED=$(xrandr | grep -o "${EXTERNAL} disconnected")
+	EXT_CONNECTED=$(xrandr | grep -o "${EXTERNAL} connected")
+	MONITOR_COUNT=$(bspc query -M | wc -l)
+}
 
 remove_default_desktop() {
     # The desktop "Desktop" is removed
@@ -98,9 +99,16 @@ monitor_remove() {
     bspc desktop Desktop -r
 }
 
+######################
+# Actual Monitor Logic
+######################
+
+get_stuff
+
 if [[ $EXT_CONNECTED ]] && [[ $MONITOR_COUNT = 1 ]]; then
 	notify-send 'Monitor Setup', 'Monitor not found in bspc, adding with xrandr.'
 	xrandr --output "$EXTERNAL" --mode 2560x1080 --pos 1366x0
+	get_stuff
 fi	
 
 if [[ $EXT_CONNECTED ]] && [[ $MONITOR_COUNT = 2 ]]; then
