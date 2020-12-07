@@ -1,0 +1,31 @@
+# Example item, with default values
+# [[item]]
+# file = '~/.config/example' (required)
+# template = 'example' (required)
+# subtemplate = 'default'
+# rewrite = false
+# start = '# Start flavours'
+# end = '# End flavours'
+# hook = ''
+
+[[item]]
+file = '~/.config/rofi/themes/colors.rasi'
+template = 'rofi'
+subtemplate = 'colors'
+rewrite = true
+
+[[item]]
+file = '~/.config/dunst/dunstrc'
+template = 'dunst'
+rewrite = false
+hook = 'killall dunst'
+
+[[item]]
+file = '~/.config/kitty/kitty.conf'
+template = 'kitty'
+rewrite = false
+
+# [[item]]
+# file = '~/.config/polybar/colors.ini'
+# template = 'polybar'
+# rewrite = false
