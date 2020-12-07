@@ -24,6 +24,7 @@ hook = 'killall dunst'
 file = '~/.config/kitty/kitty.conf'
 template = 'kitty'
 rewrite = false
+hook = 'kitty @ set_colors --all --configured /home/namsnath/.config/kitty/kitty.conf'
 
 # [[item]]
 # file = '~/.config/polybar/colors.ini'
