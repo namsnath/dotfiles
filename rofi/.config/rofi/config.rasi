@@ -1,7 +1,5 @@
 configuration {
-  modi: "window,drun,ssh,combi";
-  theme: "glue_pro_blue";
-  font: "hack 10";
-  combi-modi: "window,drun,ssh";
+  font: "Fira Code 10";
 }
-@import "/usr/share/rofi/themes/glue_pro_blue.rasi"
+
+@import "center.rasi"
