@@ -1,15 +1,23 @@
 #!/bin/bash
 
-# Known Bug (now fixed, but keep in mind):
+# Known Bug:
 # Connect monitor, run script (laptop and monitor get 5 each)
 # Restart bspwm
 # Will end up with 15 desktops
+# TODO: Fix remove_extra_from_external
 
 # Check if bspwm is running:
 pgrep bspwm > /dev/null || exit 0
 
 LAPTOP='eDP-1' # Name of Laptop Screen
+LAPTOP_WIDTH=1366
+LAPTOP_HEIGHT=768
+
 EXTERNAL='HDMI-1' # Name of External screen
+EXTERNAL_WIDTH=2560
+EXTERNAL_HEIGHT=1080
+EXTERNAL_Y_POS=LAPTOP_HEIGHT-EXTERNAL_HEIGHT
+
 LAPTOP_DESK_COUNT=5 # Number of desktops to keep on laptop
 EXT_REQ_DESK=5 # ???
 
@@ -64,18 +72,22 @@ remove_extra_from_laptop() {
     done
 }
 
+# Manages to remove all desktops somehow
+# Need to debug and fix
 remove_extra_from_external() {
-    i=$LAPTOP_DESK_COUNT
+    i=1
+    max=$LAPTOP_DESK_COUNT+$EXT_REQ_DESK
     # Query desktops on External
     for desktop in $(bspc query -D -m "$EXTERNAL")
     do
+        echo "$i $EXT_REQ_DESK $desktop";
         # Removes extra desktops from external
-        if [ "$i" -lt "$EXT_DESK_COUNT" ]; then
+        if [ "$i" -lt "$EXT_REQ_DESK" ]; then
             LOG+="Removing from ${EXTERNAL}: ${i}\n"
             bspc desktop "$desktop" --remove
             continue
         fi
-	((i++))
+	    ((i++))
     done
 }
 
@@ -84,7 +96,7 @@ monitor_add() {
     EXT_DESK_COUNT=$(bspc query -D -m ${EXTERNAL} | wc -l)
     if [[ $EXT_DESK_COUNT -ge $EXT_REQ_DESK ]]; then
 	    remove_extra_from_laptop
-        remove_extra_from_external
+        # remove_extra_from_external
 	    remove_default_desktop
         return 2
     fi
