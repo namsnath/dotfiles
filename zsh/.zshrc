@@ -1,6 +1,3 @@
-# Created by newuser for 5.8
-#
-
 # Antibody
 source <(antibody init)
 antibody bundle denysdovhan/spaceship-prompt
@@ -8,13 +5,22 @@ antibody bundle denysdovhan/spaceship-prompt
 # Packages
 autoload -U colors && colors
 
+# Sources
+source /usr/share/nvm/init-nvm.sh
+
 # Spaceship prompt configs
 SPACESHIP_PROMPT_SEPARATE_LINE=false
 SPACESHIP_GIT_PREFIX='| '
 
 # Environment Variables
 export DOT=$HOME/dotfiles
+# export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
+export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
+# export JAVA_HOME='/usr/lib/jvm/java-14-openjdk'
+export ANDROID_SDK_ROOT='/opt/android-sdk'
 
 # Aliases
 alias ls='ls --color=auto'
 alias reload='source ~/.zshrc'
+alias suspend='systemctl suspend'
+alias fast_mirrors='sudo reflector --latest 20 --sort rate --save /etc/pacman.d/mirrorlist'
