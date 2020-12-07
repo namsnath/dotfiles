@@ -3,6 +3,7 @@
 pgrep -x sxhkd > /dev/null || sxhkd &
 pgrep -x light-locker > /dev/null || light-locker &
 pgrep -x flameshot > /dev/null || flameshot &
+pgrep -x picom > /dev/null || picom &
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
