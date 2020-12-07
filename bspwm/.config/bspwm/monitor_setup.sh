@@ -64,11 +64,27 @@ remove_extra_from_laptop() {
     done
 }
 
+remove_extra_from_external() {
+    i=$LAPTOP_DESK_COUNT
+    # Query desktops on External
+    for desktop in $(bspc query -D -m "$EXTERNAL")
+    do
+        # Removes extra desktops from external
+        if [ "$i" -lt "$EXT_DESK_COUNT" ]; then
+            LOG+="Removing from ${EXTERNAL}: ${i}\n"
+            bspc desktop "$desktop" --remove
+            continue
+        fi
+	((i++))
+    done
+}
+
 monitor_add() {
     # If required desktops already present on monitor
     EXT_DESK_COUNT=$(bspc query -D -m ${EXTERNAL} | wc -l)
     if [[ $EXT_DESK_COUNT -ge $EXT_REQ_DESK ]]; then
 	    remove_extra_from_laptop
+        remove_extra_from_external
 	    remove_default_desktop
             return 2
     fi
