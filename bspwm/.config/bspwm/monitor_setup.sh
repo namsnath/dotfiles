@@ -37,9 +37,9 @@ move_desktops_to_external() {
     do
         # Skip desktops till laptop count is reached
         if [ "$i" -le "$LAPTOP_DESK_COUNT" ]; then
-                LOG+="Skipping: ${i}\n"
-                ((i++))
-                continue
+            LOG+="Skipping: ${i}\n"
+            ((i++))
+            continue
         fi
 
         # Move each desktop to external monitor
@@ -56,9 +56,9 @@ remove_extra_from_laptop() {
     do
         # Removes extra desktops from laptop
         if [ "$i" -gt "$LAPTOP_DESK_COUNT" ]; then
-                LOG+="Removing from ${LAPTOP}: ${i}\n"
-		bspc desktop "$desktop" --remove
-                continue
+            LOG+="Removing from ${LAPTOP}: ${i}\n"
+		    bspc desktop "$desktop" --remove
+            continue
         fi
 	((i++))
     done
@@ -86,7 +86,7 @@ monitor_add() {
 	    remove_extra_from_laptop
         remove_extra_from_external
 	    remove_default_desktop
-            return 2
+        return 2
     fi
 
     move_desktops_to_external	
