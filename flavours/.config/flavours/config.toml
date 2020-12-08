@@ -26,7 +26,9 @@ template = 'kitty'
 rewrite = false
 hook = 'kitty @ set_colors --all --configured ~/.config/kitty/kitty.conf'
 
-# [[item]]
-# file = '~/.config/polybar/colors.ini'
-# template = 'polybar'
-# rewrite = false
+[[item]]
+file = '~/.config/polybar/colors.ini'
+template = 'polybar'
+rewrite = false
+# Hook doesn't work for some reason
+# hook = 'sh ~/.config/polybar/launch.sh'
