@@ -30,5 +30,4 @@ hook = 'kitty @ set_colors --all --configured ~/.config/kitty/kitty.conf'
 file = '~/.config/polybar/colors.ini'
 template = 'polybar'
 rewrite = false
-# Hook doesn't work for some reason
-# hook = 'sh ~/.config/polybar/launch.sh'
+hook = 'polybar-msg cmd restart'
