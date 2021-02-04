@@ -9,25 +9,25 @@
 # hook = ''
 
 [[item]]
-file = '~/.config/rofi/themes/colors.rasi'
+file = '~/dotfiles/rofi/.config/rofi/themes/colors.rasi'
 template = 'rofi'
 subtemplate = 'colors'
 rewrite = true
 
 [[item]]
-file = '~/.config/dunst/dunstrc'
+file = '~/dotfiles/dunst/.config/dunst/dunstrc'
 template = 'dunst'
 rewrite = false
 hook = 'killall dunst'
 
 [[item]]
-file = '~/.config/kitty/kitty.conf'
+file = '~/dotfiles/kitty/.config/kitty/kitty.conf'
 template = 'kitty'
 rewrite = false
 hook = 'kitty @ set_colors --all --configured ~/.config/kitty/kitty.conf'
 
 [[item]]
-file = '~/.config/polybar/colors.ini'
+file = '~/dotfiles/polybar/.config/polybar/colors.ini'
 template = 'polybar'
 rewrite = false
 hook = 'polybar-msg cmd restart'
