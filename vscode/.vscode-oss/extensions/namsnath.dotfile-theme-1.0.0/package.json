@@ -1,0 +1,19 @@
+{
+    "name": "dotfile-theme",
+    "displayName": "Dotfile Theme",
+    "description": "namsnath's Dotfile Theme",
+    "version": "1.0.0",
+    "publisher": "namsnath",
+    "license": "MIT",
+    "engines": {
+        "vscode": "*"
+    },
+    "contributes": {
+        "themes": [{
+            "id": "Dotfile",
+            "label": "Dotfile",
+            "uiTheme": "vs-dark",
+            "path": "./theme/dotfile-theme.json"
+        }]
+    }
+}
