@@ -31,3 +31,8 @@ file = '~/.config/polybar/colors.ini'
 template = 'polybar'
 rewrite = false
 hook = 'polybar-msg cmd restart'
+
+[[item]]
+file = '~/dotfiles/vscode/.vscode-oss/extensions/namsnath.dotfile-theme-1.0.0/theme/dotfile-theme.json'
+template = 'vscode'
+rewrite = true
