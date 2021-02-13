@@ -30,4 +30,4 @@ bspc rule -a Screenkey manage=off
 
 $HOME/.config/bspwm/monitor_setup.sh
 
-feh --bg-fill ~/.config/wallpapers/valley.jpg ~/.config/wallpapers/desert_wide.jpg
+feh --bg-fill ~/.config/wallpapers/valley.jpg ~/.config/wallpapers/sunset_wide.jpg
