@@ -1,6 +1,7 @@
 # Antibody
 source <(antibody init)
 antibody bundle denysdovhan/spaceship-prompt
+antibody bundle zsh-users/zsh-autosuggestions
 
 # Packages
 autoload -U colors && colors
@@ -18,6 +19,17 @@ export DOT=$HOME/dotfiles
 export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
 # export JAVA_HOME='/usr/lib/jvm/java-14-openjdk'
 export ANDROID_SDK_ROOT='/opt/android-sdk'
+
+# History
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.zhistory
+
+# Keybinds
+## Ctrl + Right
+bindkey "^[[1;5C" forward-word
+## Ctrl + Left
+bindkey "^[[1;5D" backward-word
 
 # Aliases
 alias ls='ls --color=auto'
