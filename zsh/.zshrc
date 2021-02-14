@@ -30,5 +30,5 @@ alias get_foreground=$'flavours info $(flavours current) | sed -n \'8p\' | cut -
 alias gen_flavour_screen_1=$'flavours generate dark $(cat .fehbg | tail -1 | cut -d "\'" -f2) && flavours apply generated'
 alias gen_flavour_screen_2=$'flavours generate dark $(cat .fehbg | tail -1 | cut -d "\'" -f4) && flavours apply generated'
 ## Git
-alias git_prune_local='git prune remote origin'
-alias git_prune_merged_local='git branch -r | awk '{print $1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print $1}' | xargs -r git branch -d'
+alias git_prune_local='git remote prune origin'
+alias git_prune_merged_local="git branch --merged master --no-color | grep -v '^[ *]*master$' | xargs -r git branch -d"
