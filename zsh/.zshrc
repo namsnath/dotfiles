@@ -10,15 +10,20 @@ autoload -U colors && colors
 source /usr/share/nvm/init-nvm.sh
 
 # Spaceship prompt configs
-SPACESHIP_PROMPT_SEPARATE_LINE=false
 SPACESHIP_GIT_PREFIX='| '
 
 # Environment Variables
 export DOT=$HOME/dotfiles
 # export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
-export JAVA_HOME='/usr/lib/jvm/java-8-openjdk'
+# export JAVA_HOME='/usr/lib/jvm/java-11-openjdk'
 # export JAVA_HOME='/usr/lib/jvm/java-14-openjdk'
+export JAVA_HOME='/usr/lib/jvm/default'
 export ANDROID_SDK_ROOT='/opt/android-sdk'
+export XDG_SESSION_TYPE=X11
+
+# Paths
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
 
 # History
 HISTSIZE=1000
@@ -44,3 +49,5 @@ alias gen_flavour_screen_2=$'flavours generate dark $(cat .fehbg | tail -1 | cut
 ## Git
 alias git_prune_local='git remote prune origin'
 alias git_prune_merged_local="git branch --merged master --no-color | grep -v '^[ *]*master$' | xargs -r git branch -d"
+## Misc
+alias bg='hsetroot -solid #80ada0cc'

@@ -425,3 +425,7 @@ separator_color = "#a89984"
 #    set_stack_tag = "volume"
 #
 # vim: ft=cfg
+
+[stack-volume]
+    stack_tag = "volume"
+    format = "<b>%s %p</b>\n%b"
