@@ -20,7 +20,7 @@
           src = ./.;
 
           snowfall = {
-            namespace = "custom";
+            namespace = "namsnath";
 
             meta = {
               name = "namsnath";
