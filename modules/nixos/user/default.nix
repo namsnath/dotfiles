@@ -68,7 +68,7 @@ in
       histFile = "$XDG_CACHE_HOME/zsh.history";
     };
 
-    home = {
+    snowfallorg.user.${config.${namespace}.user.name}.home.config = {
       file = {
         "Desktop/.keep".text = "";
         "Documents/.keep".text = "";
