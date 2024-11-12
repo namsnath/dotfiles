@@ -94,17 +94,17 @@ in
 
     namsnath = {
       # system.xkb.enable = true;
-      desktop.addons = {
-        # gtk = enabled;
-        # wallpapers = enabled;
-        # electron-support = enabled;
-        # foot = enabled;
-        # clipboard = enabled;
-        # firefox-nordic-theme = enabled;
-        # ags = {
-        #   # bar = enabled;
-        # };
-      };
+      # desktop.addons = {
+      #   gtk = enabled;
+      #   wallpapers = enabled;
+      #   electron-support = enabled;
+      #   foot = enabled;
+      #   clipboard = enabled;
+      #   firefox-nordic-theme = enabled;
+      #   ags = {
+      #     # bar = enabled;
+      #   };
+      # };
 
       home = {
         # configFile."hypr/hyprpaper.conf".text = ''
