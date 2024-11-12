@@ -284,13 +284,13 @@ in
                 layerrule = [ "noanim, ^avalanche-" ];
 
                 # Programs to run on startup
-                exec-once =
-                  [
-                    # "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-                    # "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-                  ]
-                  ++ optional config.${namespace}.desktop.addons.gtk.enable
-                    "${cfg.package}/bin/hyprctl setcursor \"${config.${namespace}.desktop.addons.gtk.cursor.name}\" 16";
+                # exec-once =
+                #   [
+                #     # "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+                #     # "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+                #   ]
+                #   ++ optional config.${namespace}.desktop.addons.gtk.enable
+                #     "${cfg.package}/bin/hyprctl setcursor \"${config.${namespace}.desktop.addons.gtk.cursor.name}\" 16";
 
                 # Decorations
                 decoration = {
