@@ -18,7 +18,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    namsnath.user.extraGroups = [ "networkmanager" ];
+    snowfallorg.user.${config.${namespace}.user.name}.user.extraGroups = [ "networkmanager" ];
 
     networking = {
       hosts = {
