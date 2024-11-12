@@ -10,7 +10,7 @@ with lib.${namespace};
 {
   imports = [ ./hardware.nix ];
 
-  namsnath = {
+  snowfallorg.user.${config.${namespace}.user.name} = {
     nix = enabled;
 
     # cli-apps = {
