@@ -35,7 +35,7 @@
 
         channels-config = {
           allowUnfree = true;
-        }
+        };
 
         overlays = with inputs; {};
 
