@@ -23,7 +23,7 @@
             namespace = "custom";
 
             meta = {
-              name = "dotfiles";
+              name = "namsnath";
               title = "dotfiles";
             };
           };
