@@ -68,7 +68,7 @@ in
       histFile = "$XDG_CACHE_HOME/zsh.history";
     };
 
-    namsnath.home = {
+    home = {
       file = {
         "Desktop/.keep".text = "";
         "Documents/.keep".text = "";
