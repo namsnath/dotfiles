@@ -92,7 +92,7 @@ in
 
     programs.dconf = enabled;
 
-    namsnath = {
+    snowfallorg.user.${config.${namespace}.user.name} = {
       # system.xkb.enable = true;
       # desktop.addons = {
       #   gtk = enabled;
