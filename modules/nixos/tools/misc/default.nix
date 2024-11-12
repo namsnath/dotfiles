@@ -17,7 +17,7 @@ in
   };
 
   config = mkIf cfg.enable {
-    namsnath.home.configFile."wgetrc".text = "";
+    snowfallorg.user.${config.${namespace}.user.name}.home.config.configFile."wgetrc".text = "";
 
     environment.systemPackages = with pkgs; [
       fzf
