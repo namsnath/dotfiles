@@ -25,7 +25,7 @@ in
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [ git ];
 
-    namsnath.home.extraOptions = {
+    snowfallorg.user.${config.${namespace}.user.name}.home.extraOptions = {
       programs.git = {
         enable = true;
         inherit (cfg) userName userEmail;
