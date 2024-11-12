@@ -9,7 +9,7 @@
 }:
 with lib.${namespace};
 {
-  snowfallorg.user.${config.${namespace}.user.name} = {
+  namsnath = {
     user = {
       enable = true;
       name = config.snowfallorg.user.name;
