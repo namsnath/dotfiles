@@ -24,7 +24,7 @@ in
 {
   options.${namespace}.nix = with types; {
     enable = mkBoolOpt true "Whether or not to manage nix configuration.";
-    package = mkOpt package pkgs.lix "Which nix package to use.";
+    # package = mkOpt package pkgs.lix "Which nix package to use.";
 
     # default-substituter = {
     #   url = mkOpt str "https://cache.nixos.org" "The url for the substituter.";
@@ -60,10 +60,10 @@ in
         users = [
           "root"
           config.${namespace}.user.name
-        ] ++ optional config.services.hydra.enable "hydra";
+        ]; # ++ optional config.services.hydra.enable "hydra";
       in
       {
-        package = cfg.package;
+        # package = cfg.package;
 
         settings =
           {
