@@ -10,7 +10,7 @@ with lib;
 with lib.${namespace};
 let
   cfg = config.${namespace}.tools.git;
-  gpg = config.${namespace}.security.gpg;
+  # gpg = config.${namespace}.security.gpg;
   user = config.${namespace}.user;
 in
 {
@@ -30,10 +30,10 @@ in
         enable = true;
         inherit (cfg) userName userEmail;
         lfs = enabled;
-        signing = {
-          key = cfg.signingKey;
-          signByDefault = mkIf gpg.enable true;
-        };
+        # signing = {
+        #   key = cfg.signingKey;
+        #   signByDefault = mkIf gpg.enable true;
+        # };
         extraConfig = {
           init = {
             defaultBranch = "main";
