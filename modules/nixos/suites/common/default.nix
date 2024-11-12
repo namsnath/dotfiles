@@ -21,7 +21,7 @@ in
       # pkgs.namsnath.list-iommu
     ];
 
-    namsnath = {
+    snowfallorg.user.${config.${namespace}.user.name} = {
       nix = enabled;
 
       # TODO: Enable this once Attic is configured again.
