@@ -15,8 +15,7 @@
 
   outputs = inputs:
     let
-      lib = {
-        inputs.snowfall-lib.mkLib {
+      lib = inputs.snowfall-lib.mkLib {
           inherit inputs;
           src = ./.;
 
@@ -28,8 +27,7 @@
               title = "dotfiles";
             };
           };
-        }
-      };
+        };
     in
       lib.mkFlake {
         inherit inputs;
