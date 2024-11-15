@@ -32,18 +32,18 @@ XF86MonBrightnessDown
 	brightnessctl s 5%-
 
 XF86AudioRaiseVolume
- 	pavolume volup 2
+ 	pavolume volup 2 --noshow && /home/namsnath/go/bin/pogvolume
 
 XF86AudioLowerVolume
-	pavolume voldown 2
+	pavolume voldown 2 --noshow && /home/namsnath/go/bin/pogvolume 
 
 XF86AudioMute
-	pavolume mutetoggle
+	pavolume mutetoggle --noshow && /home/namsnath/go/bin/pogvolume
 
 super + x
-#	notify-send "Running pog" && pogvolume
+	notify-send "Running pog" && /home/namsnath/go/bin/pogvolume
 #	$GOPATH/bin/pogvolume
-	go run /media/data/Development/Repos/pogvolume/cmd/pogvolume/main.go
+#	go run /media/data/Development/Repos/pogvolume/cmd/pogvolume/main.go
 
 #
 # bspwm hotkeys
