@@ -17,7 +17,8 @@ export DOT=$HOME/dotfiles
 # export JAVA_OPTS='-XX:+IgnoreUnrecognizedVMOptions --add-modules java.se.ee'
 # export JAVA_HOME='/usr/lib/jvm/java-11-openjdk'
 # export JAVA_HOME='/usr/lib/jvm/java-14-openjdk'
-export JAVA_HOME='/usr/lib/jvm/default'
+# export JAVA_HOME='/usr/lib/jvm/default'
+export JAVA_HOME='$HOME/.sdkman/candidates/java/current'
 export ANDROID_SDK_ROOT='/opt/android-sdk'
 export XDG_SESSION_TYPE=X11
 
@@ -38,6 +39,7 @@ bindkey "^[[1;5D" backward-word
 
 # Aliases
 alias ls='ls --color=auto'
+alias ll='ls -als'
 alias reload='source ~/.zshrc'
 alias ssh='kitty +kitten ssh'
 alias suspend='systemctl suspend'
@@ -51,3 +53,7 @@ alias git_prune_local='git remote prune origin'
 alias git_prune_merged_local="git branch --merged master --no-color | grep -v '^[ *]*master$' | xargs -r git branch -d"
 ## Misc
 alias bg='hsetroot -solid #80ada0cc'
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
