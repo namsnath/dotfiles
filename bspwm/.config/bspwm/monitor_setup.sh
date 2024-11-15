@@ -14,9 +14,10 @@ LAPTOP_WIDTH=1366
 LAPTOP_HEIGHT=768
 
 EXTERNAL='HDMI-1' # Name of External screen
-EXTERNAL_WIDTH=2560
-EXTERNAL_HEIGHT=1080
-EXTERNAL_Y_POS=LAPTOP_HEIGHT-EXTERNAL_HEIGHT
+EXTERNAL_WIDTH=3840
+EXTERNAL_HEIGHT=2160
+# EXTERNAL_Y_POS=0
+EXTERNAL_Y_POS=$LAPTOP_HEIGHT-$EXTERNAL_HEIGHT
 
 LAPTOP_DESK_COUNT=5 # Number of desktops to keep on laptop
 EXT_REQ_DESK=5 # ???
@@ -135,7 +136,7 @@ get_stuff
 
 if [[ $EXT_CONNECTED ]] && [[ $MONITOR_COUNT = 1 ]]; then
 	notify-send 'Monitor Setup', 'Monitor not found in bspc, adding with xrandr.'
-	xrandr --output "$EXTERNAL" --mode 2560x1080 --pos 1366x0
+	xrandr --output "$EXTERNAL" --mode "${EXTERNAL_WIDTH}x${EXTERNAL_HEIGHT}" --pos "${LAPTOP_WIDTH}x${EXTERNAL_Y_POS}"
 	get_stuff
 fi	
 
